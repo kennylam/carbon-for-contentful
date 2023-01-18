@@ -1,0 +1,17 @@
+build
+dist
+es
+html
+lib
+node_modules
+ts
+umd
+
+# Nextjs
+.next
+
+# Changelogs
+**/CHANGELOG.md
+
+# Yarn
+**/.yarn/**

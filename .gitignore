@@ -1,4 +1,7 @@
 # Build folders
+dist
+tmp
+/out-tsc
 
 # Config files
 .npmrc

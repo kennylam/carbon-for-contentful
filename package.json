@@ -1,0 +1,110 @@
+{
+  "name": "@carbon/contentful",
+  "private": true,
+  "version": "0.0.0",
+  "repository": "https://github.com/carbon-design-system/carbon-for-contentful.git",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=16.x"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "ci-check": "yarn format:diff && yarn lint && yarn lint:styles",
+    "dev": "next dev",
+    "build": "next build",
+    "clean": "yarn nx reset && rimraf node_modules",
+    "format": "prettier --cache --write '**/*.{js,md,scss,ts}' '!**/{build,es,lib,ts,umd}/**'",
+    "format:diff": "prettier --cache --list-different '**/*.{js,md,scss,ts}' '!**/{build,es,lib,ts,umd}/**' '!packages/**'",
+    "lint": "eslint packages",
+    "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables --report-invalid-scope-disables",
+    "start": "next start",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@carbon/ibmdotcom-web-components": "latest",
+    "contentful": "^9.2.15",
+    "next": "^13.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.1",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@nrwl/nx-cloud": "latest",
+    "@nrwl/workspace": "^15.4.5",
+    "eslint": "^7.28.0",
+    "eslint-config-carbon": "^2.18.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "nx": "^15.4.5",
+    "prettier": "^2.6.2",
+    "rimraf": "3.0.2",
+    "stylelint": "^14.16.1",
+    "stylelint-config-carbon": "^1.11.0",
+    "typescript": "~4.8.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        72
+      ],
+      "body-max-line-length": [
+        2,
+        "always",
+        80
+      ],
+      "scope-case": [
+        0,
+        "always",
+        "lower-case"
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "ci",
+          "chore",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "test",
+          "style"
+        ]
+      ]
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "**/*.scss": [
+      "prettier --write",
+      "stylelint --report-needless-disables --report-invalid-scope-disables --allow-empty-input"
+    ],
+    "!(*sass).md": [
+      "prettier --write"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-carbon/base"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-carbon"
+    ]
+  }
+}
