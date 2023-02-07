@@ -1,0 +1,21 @@
+{
+  "name": "@carbon/ibm-dotcom-web-components-contentful",
+  "version": "0.1.0",
+  "description": "Contentful using Carbon for IBM.com Web Components",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@carbon/ibmdotcom-web-components": "latest",
+    "contentful": "^9.2.20",
+    "next": "^13.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
