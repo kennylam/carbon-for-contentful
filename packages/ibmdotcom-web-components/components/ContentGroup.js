@@ -23,8 +23,8 @@ export default function ContentGroup(content) {
     <DDSContentGroup>
       <DDSContentGroupHeading>{heading}</DDSContentGroupHeading>
       <DDSContentGroupCopy>{copy}</DDSContentGroupCopy>
-      {children?.map((child) => {
-        return <ComponentRenderer content={child} />;
+      {children?.map((child, index) => {
+        return <ComponentRenderer content={child} key={index} />;
       })}
       {cta && <CardLinkCTA {...cta} />}
     </DDSContentGroup>

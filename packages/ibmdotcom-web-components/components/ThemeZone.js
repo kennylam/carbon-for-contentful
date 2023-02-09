@@ -26,8 +26,8 @@ export default function ContentBlock(content) {
 
   return (
     <div className={themeClass}>
-      {body?.map((child) => {
-        return <ComponentRenderer content={child} />;
+      {body?.map((child, index) => {
+        return <ComponentRenderer content={child} key={index} />;
       })}
     </div>
   );

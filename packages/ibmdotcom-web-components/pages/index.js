@@ -73,7 +73,7 @@ const copy = `Many organizations are engaging in open source technology to optim
   on driving innovation and a growing number of IT professionals are actively participating in open source
   communities as a way to stay at the forefront of development.`;
 
-export default function Recipes({ page }) {
+export default function Recipes() {
   return (
     <div>
       <div className="dds-theme-zone-g100">

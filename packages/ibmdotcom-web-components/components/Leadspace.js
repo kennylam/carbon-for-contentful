@@ -9,7 +9,6 @@
 
 import dynamic from "next/dynamic";
 import ArrowRight20 from "@carbon/icons-react/es/arrow--right/20.js";
-import DDSButtonCTA from "@carbon/ibmdotcom-web-components/es/components-react/cta/button-cta";
 import DDSButtonGroup from "@carbon/ibmdotcom-web-components/es/components-react/button-group/button-group";
 import DDSButtonGroupItem from "@carbon/ibmdotcom-web-components/es/components-react/button-group/button-group-item";
 import DDSLeadspace from "@carbon/ibmdotcom-web-components/es/components-react/leadspace/leadspace";
@@ -36,10 +35,10 @@ export default function Leadspace(content) {
       {copy}
       <DDSButtonGroup slot="action">
         {buttonGroup &&
-          buttonGroup.map((button) => {
+          buttonGroup.map((button, index) => {
             const { href, copy } = button.fields;
             return (
-              <DDSButtonGroupItem href={href}>
+              <DDSButtonGroupItem href={href} key={index}>
                 <ArrowRight20 slot="icon" />
                 {copy}
               </DDSButtonGroupItem>
@@ -55,7 +54,7 @@ export default function Leadspace(content) {
           alt={altText}
         >
           {imageItems &&
-            imageItems.map((image) => {
+            imageItems.map((image, index) => {
               const { minWidth } = image.fields;
               const { url } = image.fields.image.fields.file;
 
@@ -63,6 +62,7 @@ export default function Leadspace(content) {
                 <DDSImageItem
                   media={`(min-width: ${minWidth})`}
                   srcset={"https:" + url}
+                  key={index}
                 ></DDSImageItem>
               );
             })}

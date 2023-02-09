@@ -85,7 +85,7 @@ function MyApp(props) {
            */
           document.addEventListener(
             "dds-search-with-typeahead-input",
-            async (e) => {
+            async () => {
               document.dispatchEvent(
                 new CustomEvent("dds-custom-typeahead-api-results", {
                   detail: [

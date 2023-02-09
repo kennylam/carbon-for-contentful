@@ -28,8 +28,8 @@ export default function ContentBlock(content) {
         <ArrowRight20 slot="icon" />
       </DDSLinkWithIcon>
       <DDSCarousel>
-        {cards.map((card) => {
-          return <Card {...card} />;
+        {cards.map((card, index) => {
+          return <Card {...card} key={index} />;
         })}
       </DDSCarousel>
     </DDSCardSectionCarousel>

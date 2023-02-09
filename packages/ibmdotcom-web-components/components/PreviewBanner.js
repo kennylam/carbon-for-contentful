@@ -21,7 +21,6 @@ function PreviewBanner() {
         color: "white",
         fontSize: "14px",
         textTransform: "uppercase",
-        display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}

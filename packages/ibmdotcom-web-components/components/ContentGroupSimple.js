@@ -41,7 +41,7 @@ export default function ContentGroupSimple(content) {
           defaultSrc={"https:" + defaultSrc}
           heading={caption}
         >
-          {imageItems?.map((image) => {
+          {imageItems?.map((image, index) => {
             const { minWidth } = image.fields;
             const { url } = image.fields.image.fields.file;
 
@@ -49,6 +49,7 @@ export default function ContentGroupSimple(content) {
               <DDSImageItem
                 media={`(min-width: ${minWidth})`}
                 srcset={"https:" + url}
+                key={index}
               ></DDSImageItem>
             );
           })}
@@ -61,8 +62,8 @@ export default function ContentGroupSimple(content) {
           background-mode={true}
         ></DDSVideoPlayerContainer>
       )}
-      {children?.map((child) => {
-        return <ComponentRenderer content={child} />;
+      {children?.map((child, index) => {
+        return <ComponentRenderer content={child} key={index} />;
       })}
 
       {cta && <CardLinkCTA {...cta} />}

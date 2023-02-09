@@ -24,8 +24,8 @@ export default function ContentBlock(content) {
     <DDSContentBlock complementary-style-scheme={border ? "with-border" : ""}>
       <DDSContentBlockHeading>{heading}</DDSContentBlockHeading>
       <DDSContentBlockCopy>{copy}</DDSContentBlockCopy>
-      {children?.map((child) => {
-        return <ComponentRenderer content={child} />;
+      {children?.map((child, index) => {
+        return <ComponentRenderer content={child} key={index} />;
       })}
       {cta && <CardLinkCTA {...cta} />}
     </DDSContentBlock>

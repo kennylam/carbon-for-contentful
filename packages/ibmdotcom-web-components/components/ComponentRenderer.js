@@ -60,27 +60,15 @@ export default function ComponentRenderer(content) {
 
   let componentList = components || content.content;
 
-  if (!Array.isArray(componentList)) componentList = [componentList];
+  if (!Array.isArray(componentList)) {
+    componentList = [componentList];
+  }
 
   return (
     <>
       {componentList?.map((component) => {
         const { id } = component.sys.contentType.sys;
         let ComponentName = map[id];
-
-        // if (id == "mastheadCustomization") {
-        //   const masthead = document.querySelector("dds-masthead-composite");
-
-        //   const { mastheadLinks } = component?.fields || {};
-
-        //   const navLinks = [];
-
-        //   mastheadLinks.map((link) => {
-        //     navLinks.push(link?.fields);
-        //   });
-        //   navLinks.push(exploreMore);
-        //   masthead.navLinks = navLinks;
-        // }
 
         if (!ComponentName) {
           return <></>;

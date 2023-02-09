@@ -33,7 +33,7 @@ export default function BackgroundMedia(content) {
       slot={slot}
     >
       {!videoId &&
-        imageItems.map((image) => {
+        imageItems.map((image, index) => {
           const { minWidth } = image.fields;
           const { url } = image.fields.image.fields.file;
 
@@ -41,6 +41,7 @@ export default function BackgroundMedia(content) {
             <DDSImageItem
               media={`(min-width: ${minWidth})`}
               srcset={"https:" + url}
+              key={index}
             ></DDSImageItem>
           );
         })}

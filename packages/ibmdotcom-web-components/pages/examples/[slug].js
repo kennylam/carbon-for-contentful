@@ -7,12 +7,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import * as contentful from "../../utils/contentful";
 
 // const ContentBlock = dynamic(import('../../components/ContentBlock'), { ssr: false })
 // const Card = dynamic(import('../../components/Card'), { ssr: false })
-// const ComponentRenderer = dynamic(import('../../components/ComponentRenderer'), { ssr: false })
+const ComponentRenderer = dynamic(
+  import("../../components/ComponentRenderer"),
+  { ssr: false }
+);
 
 export default function Pages(props) {
   const { body } = props.page?.fields;

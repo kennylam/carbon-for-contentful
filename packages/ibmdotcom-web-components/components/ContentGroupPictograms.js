@@ -36,10 +36,10 @@ export default function ContentGroupPictograms(content) {
     <DDSContentGroupPictograms>
       <DDSContentGroupHeading>{heading}</DDSContentGroupHeading>
       {copy && <DDSContentGroupCopy>{copy}</DDSContentGroupCopy>}
-      {pictogramItems?.map((child) => {
+      {pictogramItems?.map((child, index) => {
         const { heading, copy, pictogram, ctaText, ctaHref } = child.fields;
         return (
-          <DDSPictogramItem>
+          <DDSPictogramItem key={index}>
             <svg
               version="1.1"
               slot="pictogram"
@@ -56,9 +56,9 @@ export default function ContentGroupPictograms(content) {
                 <g id="touch_screen_1_">
                   <path
                     fill="none"
-                    stroke-linejoin="round"
-                    stroke-miterlimit="10"
-                    stroke-width=".72"
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    strokeWidth=".72"
                     d={pictoMap[pictogram]}
                   ></path>
                 </g>
