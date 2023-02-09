@@ -30,9 +30,6 @@ const CardSectionCarousel = dynamic(import("./CardSectionCarousel"), {
   ssr: false,
 });
 const CardSection = dynamic(import("./CardSection"), { ssr: false });
-const PieChart = dynamic(import("./PieChart"), {
-  ssr: false,
-});
 const ThemeZone = dynamic(import("./ThemeZone"), { ssr: false });
 
 // import exploreMore from "../data/exploreMore.json";
@@ -51,7 +48,6 @@ const map = {
   "dds-background-media": BackgroundMedia,
   "dds-leadspace": Leadspace,
   "dds-table-of-contents": TableOfContents,
-  pieChart: PieChart,
   themeZone: ThemeZone,
 };
 

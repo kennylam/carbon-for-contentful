@@ -16,6 +16,7 @@ import DDSImage from "@carbon/ibmdotcom-web-components/es/components-react/image
 
 export default function CardGroup(content) {
   const { cards } = content?.fields || {};
+
   return (
     <DDSCardGroup>
       {cards.map((card, index) => {
