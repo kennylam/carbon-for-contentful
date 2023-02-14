@@ -23,6 +23,7 @@ export default function BackgroundMedia(content) {
     slot,
   } = content?.fields || {};
   const { url } = defaultSrc?.fields?.file || {};
+
   return (
     <DDSBackgroundMedia
       gradient-direction={gradientDirection}

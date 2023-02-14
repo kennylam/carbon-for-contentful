@@ -22,6 +22,7 @@ export default function CardGroup(content) {
       {cards.map((card, index) => {
         const { eyebrow, heading, href, copy, altText, image } = card?.fields;
         const { url } = image?.fields?.file || {};
+
         return (
           <DDSCardGroupItem cta-type="local" href={href} key={index}>
             {image && (

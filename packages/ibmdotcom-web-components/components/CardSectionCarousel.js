@@ -19,6 +19,7 @@ const Card = dynamic(import("./Card"), { ssr: false });
 
 export default function ContentBlock(content) {
   const { heading, copy, href, ctaText, cards } = content?.fields || {};
+
   return (
     <DDSCardSectionCarousel>
       <DDSContentSectionHeading>{heading}</DDSContentSectionHeading>
